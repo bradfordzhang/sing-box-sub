@@ -95,7 +95,7 @@ func main() {
 			"\t\"type\": \"" + nodeType[nodeInfo.Type] + "\",\n" +
 			"\t\"tag\": \"" + nodeInfo.Name + "\",\n" +
 			"\t\"server\": \"" + nodeInfo.Server + "\",\n" +
-			"\t\"server_port\": \"" + strconv.Itoa(nodeInfo.Port) + "\",\n" +
+			"\t\"server_port\": " + strconv.Itoa(nodeInfo.Port) + ",\n" +
 			"\t\"method\": \"" + nodeInfo.Security + "\",\n" +
 			"\t\"password\": \"" + nodeInfo.Pass + "\"\n" +
 			"},"
