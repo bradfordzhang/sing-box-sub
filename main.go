@@ -54,6 +54,8 @@ func main() {
 	nodeType["ssr"] = "shadowsocksr"
 	nodeType["vless"] = "vless"
 
+	var nodeList []string
+
 	var subUrl string
 	for k, v := range os.Args {
 		if k == 1 {
@@ -98,6 +100,12 @@ func main() {
 			"\t\"password\": \"" + nodeInfo.Pass + "\"\n" +
 			"},"
 		fmt.Println(outbound)
+		nodeList = append(nodeList, nodeInfo.Name)
 	}
 	fmt.Println("{\n" + "\t\"type\": \"direct\"\n" + "\t\"tag\": \"direct\"\n" + "},\n" + "{\n" + "\t\"type\": \"block\"\n" + "\t\"tag\": \"block\"\n" + "}")
+
+	fmt.Println("Node List:")
+	for _, nodeName := range nodeList {
+		fmt.Printf("\"%s\",\n", nodeName)
+	}
 }
